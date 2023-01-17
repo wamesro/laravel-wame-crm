@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \Wame\LaravelAuth\LaravelAuthServiceProvider::class,
 
         /*
          * Application Service Providers...
