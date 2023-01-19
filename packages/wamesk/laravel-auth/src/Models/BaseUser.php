@@ -69,17 +69,4 @@ class BaseUser extends Authenticatable implements Sortable
     {
         return $this->hasMany(UserPasswordReset::class, 'user_id');
     }
-
-    /**
-     * @return string
-     */
-    public function getEmailVerificationLink(): string
-    {
-        return URL::temporarySignedRoute('auth.email.verify', Carbon::now()->addMinutes(120),
-            [
-                'id' => $this->id,
-                'hash' => sha1($this->email),
-            ]
-        );
-    }
 }
